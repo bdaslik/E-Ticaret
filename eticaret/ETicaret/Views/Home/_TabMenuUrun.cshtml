@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = null;
+}
+
+@{
+    ESatisEntities db = new ESatisEntities();
+    var kat = db.Kategori.ToList();
+
+}
+
+<div class="category-tab">
+    <!--category-tab-->
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#Bilgisayar" data-toggle="tab">Bilgisayar</a></li>
+            <li><a href="#Elektronik" data-toggle="tab">Elektronik</a></li>
+            <li><a href="#Ses" data-toggle="tab">Ses</a></li>
+            <li><a href="#Cevre" data-toggle="tab">Çevre</a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+
+        @{int i = 0; string durum = ""; int adet = 0;}
+            @foreach (var item in kat)
+            {
+                adet = 0;
+                var urun = db.Urunler.Where(x => x.KategoriID == item.KategoriID);
+
+                if (i == 0)
+                {
+                    durum = "tab-pane fade active in";
+                }
+                else
+                {
+                    durum = "tab-pane fade";
+                }
+                i++; 
+                <div class="@durum" id="@item.KategoriAd">
+
+                    @foreach (var uitem in urun)
+                    {
+
+                        if (adet >= 4)
+                        {
+                            break;
+                        }
+
+                        <div class="col-sm-3">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="@uitem.imgpath" style="max-height:200px; width:auto;" alt="" />
+                                        <h2>@uitem.Fiyat</h2>
+                                        <p>@db.Marka.Find(uitem.MarkaID).Marka1 @uitem.Model</p>
+                                        @Html.ActionLink("Satın Al", "Details", "Product", new { id = uitem.UrunID }, new { @class = "btn btn-default get" })
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                       adet++;
+                    }
+                </div>
+
+
+            }
+
+
+        
+
+
+
+
+
+
+    </div>
+</div><!--/category-tab-->

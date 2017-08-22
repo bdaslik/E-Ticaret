@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+@{ESatisEntities db = new ESatisEntities();
+    var kategori = db.Kategori;
+    var alt_Kategori = db.Alt_Kategori;
+    var marka = db.Marka;
+    var urunler = db.Urunler;
+
+}
+
+<div class="col-sm-3">
+    <div class="left-sidebar">
+        <h2>Kategori</h2>
+        <div class="panel-group category-products" id="accordian">
+            <!--category-productsr-->
+
+            @foreach (var item in kategori)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            @Html.ActionLink(item.KategoriAd, "Shop", "Product", new { id = item.KategoriID }, new { data_toggle = "collapse", data_parent = "#accordian" ,href = "#"+item.KategoriAd })
+                            
+                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                @item.KategoriAd
+
+                            
+                        </h4>
+                    </div>
+                    <div id="@item.KategoriAd" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                @{ var list = db.Alt_Kategori.Where(x => x.KategoriID == item.KategoriID);}
+                                @foreach (var nesne in list)
+                                {
+
+                                    <li>@Html.ActionLink(nesne.Ad, "Shop", "Product", new { id = nesne.AK_ID }, new { })</li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                                    }
+
+
+        </div><!--/category-products-->
+
+        <div class="brands_products">
+            <!--brands_products-->
+            <h2>Markalar</h2>
+            <div class="brands-name">
+                <ul class="nav nav-pills nav-stacked">
+                    @{ int adet;}
+                    @foreach (var item in marka)
+                    {
+                        adet = urunler.Count(x => x.MarkaID == item.MarkaID);
+                        <li> @Html.ActionLink(item.Marka1 + "       (" + adet + ")", "MShop", "Product", new { id = item.MarkaID }, new { })</li>
+
+
+
+
+                    }
+
+
+                </ul>
+            </div>
+        </div><!--/brands_products-->
+        @*<div class="price-range">
+                <!--price-range-->
+                <h2>Price Range</h2>
+                <div class="well text-center">
+                    <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                    <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
+                </div>
+            </div><!--/price-range-->*@
+
+        <div class="shipping text-center">
+            <!--shipping-->
+            <img src="/Content/images/home/shipping.jpg" alt="" />
+        </div><!--/shipping-->
+
+    </div>
+</div>

@@ -1,0 +1,935 @@
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+<!-- EF Runtime content -->
+<edmx:Runtime>
+<!-- SSDL content -->
+<edmx:StorageModels>
+<Schema Namespace="ESatisModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ESatisModelStoreContainer">
+    <EntitySet Name="Alt_Kategori" EntityType="ESatisModel.Store.Alt_Kategori" store:Type="Tables" />
+    <EntitySet Name="Blog" EntityType="ESatisModel.Store.Blog" store:Type="Tables" />
+    <EntitySet Name="Kategori" EntityType="ESatisModel.Store.Kategori" store:Type="Tables" />
+    <EntitySet Name="Marka" EntityType="ESatisModel.Store.Marka" store:Type="Tables" />
+    <EntitySet Name="Oneri" EntityType="ESatisModel.Store.Oneri" store:Type="Tables" />
+    <EntitySet Name="Satis" EntityType="ESatisModel.Store.Satis" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="ESatisModel.Store.Slider" store:Type="Tables" />
+    <EntitySet Name="Stok" EntityType="ESatisModel.Store.Stok" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="ESatisModel.Store.sysdiagrams" store:Type="Tables" />
+    <EntitySet Name="Teslimat" EntityType="ESatisModel.Store.Teslimat" store:Type="Tables" />
+    <EntitySet Name="Urunler" EntityType="ESatisModel.Store.Urunler" store:Type="Tables" />
+    <EntitySet Name="Uyeler" EntityType="ESatisModel.Store.Uyeler" store:Type="Tables" />
+    <EntitySet Name="Yetki" EntityType="ESatisModel.Store.Yetki" store:Type="Tables" />
+    <EntitySet Name="Yetkilendirme" EntityType="ESatisModel.Store.Yetkilendirme" store:Type="Tables" />
+    <EntitySet Name="Yorum" EntityType="ESatisModel.Store.Yorum" store:Type="Tables" />
+    <AssociationSet Name="FK_Alt_Kategori_Kategori" Association="ESatisModel.Store.FK_Alt_Kategori_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Alt_Kategori" EntitySet="Alt_Kategori" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_Urunler" Association="ESatisModel.Store.FK_Blog_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oneri_Urunler" Association="ESatisModel.Store.FK_Oneri_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Oneri" EntitySet="Oneri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_Urunler" Association="ESatisModel.Store.FK_Satis_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_Uyeler" Association="ESatisModel.Store.FK_Satis_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stok_Urunler" Association="ESatisModel.Store.FK_Stok_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Stok" EntitySet="Stok" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teslimat_Satis" Association="ESatisModel.Store.FK_Teslimat_Satis">
+      <End Role="Satis" EntitySet="Satis" />
+      <End Role="Teslimat" EntitySet="Teslimat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Alt_Kategori" Association="ESatisModel.Store.FK_Urunler_Alt_Kategori">
+      <End Role="Alt_Kategori" EntitySet="Alt_Kategori" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yetkilendirme_Uyeler" Association="ESatisModel.Store.FK_Yetkilendirme_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Yetkilendirme" EntitySet="Yetkilendirme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yetkilendirme_Yetki" Association="ESatisModel.Store.FK_Yetkilendirme_Yetki">
+      <End Role="Yetki" EntitySet="Yetki" />
+      <End Role="Yetkilendirme" EntitySet="Yetkilendirme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorum_Urunler" Association="ESatisModel.Store.FK_Yorum_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Yorum" EntitySet="Yorum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorum_Uyeler" Association="ESatisModel.Store.FK_Yorum_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Yorum" EntitySet="Yorum" />
+    </AssociationSet>
+    <AssociationSet Name="FKMarkaID" Association="ESatisModel.Store.FKMarkaID">
+      <End Role="Marka" EntitySet="Marka" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Alt_Kategori">
+    <Key>
+      <PropertyRef Name="AK_ID" />
+    </Key>
+    <Property Name="AK_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriID" Type="int" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="BlogID" />
+    </Key>
+    <Property Name="BlogID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="int" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Metin" Type="nvarchar" MaxLength="500" />
+    <Property Name="tarih" Type="datetime" />
+    <Property Name="BlogResim" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriID" />
+    </Key>
+    <Property Name="KategoriID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAd" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Marka">
+    <Key>
+      <PropertyRef Name="MarkaID" />
+    </Key>
+    <Property Name="MarkaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Marka" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Oneri">
+    <Key>
+      <PropertyRef Name="OneriID" />
+    </Key>
+    <Property Name="OneriID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="int" />
+  </EntityType>
+  <EntityType Name="Satis">
+    <Key>
+      <PropertyRef Name="SatisID" />
+    </Key>
+    <Property Name="SatisID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="int" />
+    <Property Name="UyeID" Type="int" />
+    <Property Name="Tutar" Type="int" />
+    <Property Name="Satis_Tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="SlideID" />
+    </Key>
+    <Property Name="SlideID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ResimYolu" Type="nvarchar" MaxLength="200" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fiyat" Type="nvarchar" MaxLength="10" />
+    <Property Name="Mesaj" Type="nvarchar" MaxLength="100" />
+    <Property Name="link" Type="int" />
+    <Property Name="aktif" Type="bit" />
+  </EntityType>
+  <EntityType Name="Stok">
+    <Key>
+      <PropertyRef Name="StokID" />
+    </Key>
+    <Property Name="StokID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="int" Nullable="false" />
+    <Property Name="Adet" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="image" />
+  </EntityType>
+  <EntityType Name="Teslimat">
+    <Key>
+      <PropertyRef Name="TesID" />
+    </Key>
+    <Property Name="TesID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SatisID" Type="int" />
+    <Property Name="Tes_Tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AK_ID" Type="int" Nullable="false" />
+    <Property Name="MarkaID" Type="int" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Fiyat" Type="int" Nullable="false" />
+    <Property Name="Ozellikler" Type="nvarchar" MaxLength="250" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tarih" Type="datetime" Nullable="false" />
+    <Property Name="imgpath" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Uyeler">
+    <Key>
+      <PropertyRef Name="UyeID" />
+    </Key>
+    <Property Name="UyeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Soyad" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Mail" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Sifre" Type="nvarchar" Nullable="false" MaxLength="12" />
+    <Property Name="Telefon" Type="nchar" MaxLength="12" />
+    <Property Name="Dogum_Tarih" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Yetki">
+    <Key>
+      <PropertyRef Name="YetkiID" />
+    </Key>
+    <Property Name="YetkiID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Tip" Type="nvarchar" Nullable="false" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Yetkilendirme">
+    <Key>
+      <PropertyRef Name="Y_ID" />
+    </Key>
+    <Property Name="Y_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UyeID" Type="int" Nullable="false" />
+    <Property Name="YetkiID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Yorum">
+    <Key>
+      <PropertyRef Name="Yorum_ID" />
+    </Key>
+    <Property Name="Yorum_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="int" />
+    <Property Name="UyeID" Type="int" />
+    <Property Name="Tarih" Type="datetime" />
+    <Property Name="Yorum" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_Alt_Kategori_Kategori">
+    <End Role="Kategori" Type="ESatisModel.Store.Kategori" Multiplicity="0..1" />
+    <End Role="Alt_Kategori" Type="ESatisModel.Store.Alt_Kategori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriID" />
+      </Principal>
+      <Dependent Role="Alt_Kategori">
+        <PropertyRef Name="KategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Store.Urunler" Multiplicity="0..1" />
+    <End Role="Blog" Type="ESatisModel.Store.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oneri_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Store.Urunler" Multiplicity="0..1" />
+    <End Role="Oneri" Type="ESatisModel.Store.Oneri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Oneri">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Store.Urunler" Multiplicity="0..1" />
+    <End Role="Satis" Type="ESatisModel.Store.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_Uyeler">
+    <End Role="Uyeler" Type="ESatisModel.Store.Uyeler" Multiplicity="0..1" />
+    <End Role="Satis" Type="ESatisModel.Store.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stok_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Store.Urunler" Multiplicity="1" />
+    <End Role="Stok" Type="ESatisModel.Store.Stok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Stok">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teslimat_Satis">
+    <End Role="Satis" Type="ESatisModel.Store.Satis" Multiplicity="0..1" />
+    <End Role="Teslimat" Type="ESatisModel.Store.Teslimat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Satis">
+        <PropertyRef Name="SatisID" />
+      </Principal>
+      <Dependent Role="Teslimat">
+        <PropertyRef Name="SatisID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Alt_Kategori">
+    <End Role="Alt_Kategori" Type="ESatisModel.Store.Alt_Kategori" Multiplicity="1" />
+    <End Role="Urunler" Type="ESatisModel.Store.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Alt_Kategori">
+        <PropertyRef Name="AK_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="AK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yetkilendirme_Uyeler">
+    <End Role="Uyeler" Type="ESatisModel.Store.Uyeler" Multiplicity="1" />
+    <End Role="Yetkilendirme" Type="ESatisModel.Store.Yetkilendirme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Yetkilendirme">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yetkilendirme_Yetki">
+    <End Role="Yetki" Type="ESatisModel.Store.Yetki" Multiplicity="1" />
+    <End Role="Yetkilendirme" Type="ESatisModel.Store.Yetkilendirme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yetki">
+        <PropertyRef Name="YetkiID" />
+      </Principal>
+      <Dependent Role="Yetkilendirme">
+        <PropertyRef Name="YetkiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorum_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Store.Urunler" Multiplicity="0..1" />
+    <End Role="Yorum" Type="ESatisModel.Store.Yorum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Yorum">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorum_Uyeler">
+    <End Role="Uyeler" Type="ESatisModel.Store.Uyeler" Multiplicity="0..1" />
+    <End Role="Yorum" Type="ESatisModel.Store.Yorum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Yorum">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMarkaID">
+    <End Role="Marka" Type="ESatisModel.Store.Marka" Multiplicity="1" />
+    <End Role="Urunler" Type="ESatisModel.Store.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marka">
+        <PropertyRef Name="MarkaID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="MarkaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
+</edmx:StorageModels>
+<!-- CSDL content -->
+<edmx:ConceptualModels>
+<Schema Namespace="ESatisModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ESatisEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Alt_Kategori" EntityType="ESatisModel.Alt_Kategori" />
+    <EntitySet Name="Blog" EntityType="ESatisModel.Blog" />
+    <EntitySet Name="Kategori" EntityType="ESatisModel.Kategori" />
+    <EntitySet Name="Marka" EntityType="ESatisModel.Marka" />
+    <EntitySet Name="Oneri" EntityType="ESatisModel.Oneri" />
+    <EntitySet Name="Satis" EntityType="ESatisModel.Satis" />
+    <EntitySet Name="Slider" EntityType="ESatisModel.Slider" />
+    <EntitySet Name="Stok" EntityType="ESatisModel.Stok" />
+    <EntitySet Name="sysdiagrams" EntityType="ESatisModel.sysdiagrams" />
+    <EntitySet Name="Teslimat" EntityType="ESatisModel.Teslimat" />
+    <EntitySet Name="Urunler" EntityType="ESatisModel.Urunler" />
+    <EntitySet Name="Uyeler" EntityType="ESatisModel.Uyeler" />
+    <EntitySet Name="Yetki" EntityType="ESatisModel.Yetki" />
+    <EntitySet Name="Yetkilendirme" EntityType="ESatisModel.Yetkilendirme" />
+    <EntitySet Name="Yorum" EntityType="ESatisModel.Yorum" />
+    <AssociationSet Name="FK_Alt_Kategori_Kategori" Association="ESatisModel.FK_Alt_Kategori_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Alt_Kategori" EntitySet="Alt_Kategori" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Alt_Kategori" Association="ESatisModel.FK_Urunler_Alt_Kategori">
+      <End Role="Alt_Kategori" EntitySet="Alt_Kategori" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_Urunler" Association="ESatisModel.FK_Blog_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="FKMarkaID" Association="ESatisModel.FKMarkaID">
+      <End Role="Marka" EntitySet="Marka" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oneri_Urunler" Association="ESatisModel.FK_Oneri_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Oneri" EntitySet="Oneri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_Urunler" Association="ESatisModel.FK_Satis_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_Uyeler" Association="ESatisModel.FK_Satis_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teslimat_Satis" Association="ESatisModel.FK_Teslimat_Satis">
+      <End Role="Satis" EntitySet="Satis" />
+      <End Role="Teslimat" EntitySet="Teslimat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stok_Urunler" Association="ESatisModel.FK_Stok_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Stok" EntitySet="Stok" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorum_Urunler" Association="ESatisModel.FK_Yorum_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Yorum" EntitySet="Yorum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yetkilendirme_Uyeler" Association="ESatisModel.FK_Yetkilendirme_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Yetkilendirme" EntitySet="Yetkilendirme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorum_Uyeler" Association="ESatisModel.FK_Yorum_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Yorum" EntitySet="Yorum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yetkilendirme_Yetki" Association="ESatisModel.FK_Yetkilendirme_Yetki">
+      <End Role="Yetki" EntitySet="Yetki" />
+      <End Role="Yetkilendirme" EntitySet="Yetkilendirme" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Alt_Kategori">
+    <Key>
+      <PropertyRef Name="AK_ID" />
+    </Key>
+    <Property Name="AK_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriID" Type="Int32" />
+    <Property Name="Ad" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Kategori" Relationship="ESatisModel.FK_Alt_Kategori_Kategori" FromRole="Alt_Kategori" ToRole="Kategori" />
+    <NavigationProperty Name="Urunler" Relationship="ESatisModel.FK_Urunler_Alt_Kategori" FromRole="Alt_Kategori" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="BlogID" />
+    </Key>
+    <Property Name="BlogID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" />
+    <Property Name="Baslik" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Metin" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="tarih" Type="DateTime" />
+    <Property Name="BlogResim" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Urunler" Relationship="ESatisModel.FK_Blog_Urunler" FromRole="Blog" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriID" />
+    </Key>
+    <Property Name="KategoriID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAd" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Alt_Kategori" Relationship="ESatisModel.FK_Alt_Kategori_Kategori" FromRole="Kategori" ToRole="Alt_Kategori" />
+  </EntityType>
+  <EntityType Name="Marka">
+    <Key>
+      <PropertyRef Name="MarkaID" />
+    </Key>
+    <Property Name="MarkaID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Marka1" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Urunler" Relationship="ESatisModel.FKMarkaID" FromRole="Marka" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Oneri">
+    <Key>
+      <PropertyRef Name="OneriID" />
+    </Key>
+    <Property Name="OneriID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" />
+    <NavigationProperty Name="Urunler" Relationship="ESatisModel.FK_Oneri_Urunler" FromRole="Oneri" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Satis">
+    <Key>
+      <PropertyRef Name="SatisID" />
+    </Key>
+    <Property Name="SatisID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" />
+    <Property Name="UyeID" Type="Int32" />
+    <Property Name="Tutar" Type="Int32" />
+    <Property Name="Satis_Tarih" Type="DateTime" />
+    <NavigationProperty Name="Urunler" Relationship="ESatisModel.FK_Satis_Urunler" FromRole="Satis" ToRole="Urunler" />
+    <NavigationProperty Name="Uyeler" Relationship="ESatisModel.FK_Satis_Uyeler" FromRole="Satis" ToRole="Uyeler" />
+    <NavigationProperty Name="Teslimat" Relationship="ESatisModel.FK_Teslimat_Satis" FromRole="Satis" ToRole="Teslimat" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="SlideID" />
+    </Key>
+    <Property Name="SlideID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ResimYolu" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Baslik" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Fiyat" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="Mesaj" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="Int32" />
+    <Property Name="aktif" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Stok">
+    <Key>
+      <PropertyRef Name="StokID" />
+    </Key>
+    <Property Name="StokID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" Nullable="false" />
+    <Property Name="Adet" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Urunler" Relationship="ESatisModel.FK_Stok_Urunler" FromRole="Stok" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teslimat">
+    <Key>
+      <PropertyRef Name="TesID" />
+    </Key>
+    <Property Name="TesID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SatisID" Type="Int32" />
+    <Property Name="Tes_Tarih" Type="DateTime" />
+    <NavigationProperty Name="Satis" Relationship="ESatisModel.FK_Teslimat_Satis" FromRole="Teslimat" ToRole="Satis" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AK_ID" Type="Int32" Nullable="false" />
+    <Property Name="MarkaID" Type="Int32" Nullable="false" />
+    <Property Name="Model" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Fiyat" Type="Int32" Nullable="false" />
+    <Property Name="Ozellikler" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" />
+    <Property Name="imgpath" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Alt_Kategori" Relationship="ESatisModel.FK_Urunler_Alt_Kategori" FromRole="Urunler" ToRole="Alt_Kategori" />
+    <NavigationProperty Name="Blog" Relationship="ESatisModel.FK_Blog_Urunler" FromRole="Urunler" ToRole="Blog" />
+    <NavigationProperty Name="Marka" Relationship="ESatisModel.FKMarkaID" FromRole="Urunler" ToRole="Marka" />
+    <NavigationProperty Name="Oneri" Relationship="ESatisModel.FK_Oneri_Urunler" FromRole="Urunler" ToRole="Oneri" />
+    <NavigationProperty Name="Satis" Relationship="ESatisModel.FK_Satis_Urunler" FromRole="Urunler" ToRole="Satis" />
+    <NavigationProperty Name="Stok" Relationship="ESatisModel.FK_Stok_Urunler" FromRole="Urunler" ToRole="Stok" />
+    <NavigationProperty Name="Yorum" Relationship="ESatisModel.FK_Yorum_Urunler" FromRole="Urunler" ToRole="Yorum" />
+  </EntityType>
+  <EntityType Name="Uyeler">
+    <Key>
+      <PropertyRef Name="UyeID" />
+    </Key>
+    <Property Name="UyeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Soyad" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Mail" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Sifre" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+    <Property Name="Telefon" Type="String" MaxLength="12" Unicode="true" FixedLength="true" />
+    <Property Name="Dogum_Tarih" Type="DateTime" />
+    <NavigationProperty Name="Satis" Relationship="ESatisModel.FK_Satis_Uyeler" FromRole="Uyeler" ToRole="Satis" />
+    <NavigationProperty Name="Yetkilendirme" Relationship="ESatisModel.FK_Yetkilendirme_Uyeler" FromRole="Uyeler" ToRole="Yetkilendirme" />
+    <NavigationProperty Name="Yorum" Relationship="ESatisModel.FK_Yorum_Uyeler" FromRole="Uyeler" ToRole="Yorum" />
+  </EntityType>
+  <EntityType Name="Yetki">
+    <Key>
+      <PropertyRef Name="YetkiID" />
+    </Key>
+    <Property Name="YetkiID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Tip" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Yetkilendirme" Relationship="ESatisModel.FK_Yetkilendirme_Yetki" FromRole="Yetki" ToRole="Yetkilendirme" />
+  </EntityType>
+  <EntityType Name="Yetkilendirme">
+    <Key>
+      <PropertyRef Name="Y_ID" />
+    </Key>
+    <Property Name="Y_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UyeID" Type="Int32" Nullable="false" />
+    <Property Name="YetkiID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Uyeler" Relationship="ESatisModel.FK_Yetkilendirme_Uyeler" FromRole="Yetkilendirme" ToRole="Uyeler" />
+    <NavigationProperty Name="Yetki" Relationship="ESatisModel.FK_Yetkilendirme_Yetki" FromRole="Yetkilendirme" ToRole="Yetki" />
+  </EntityType>
+  <EntityType Name="Yorum">
+    <Key>
+      <PropertyRef Name="Yorum_ID" />
+    </Key>
+    <Property Name="Yorum_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" />
+    <Property Name="UyeID" Type="Int32" />
+    <Property Name="Tarih" Type="DateTime" />
+    <Property Name="Yorum1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Urunler" Relationship="ESatisModel.FK_Yorum_Urunler" FromRole="Yorum" ToRole="Urunler" />
+    <NavigationProperty Name="Uyeler" Relationship="ESatisModel.FK_Yorum_Uyeler" FromRole="Yorum" ToRole="Uyeler" />
+  </EntityType>
+  <Association Name="FK_Alt_Kategori_Kategori">
+    <End Role="Kategori" Type="ESatisModel.Kategori" Multiplicity="0..1" />
+    <End Role="Alt_Kategori" Type="ESatisModel.Alt_Kategori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriID" />
+      </Principal>
+      <Dependent Role="Alt_Kategori">
+        <PropertyRef Name="KategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Alt_Kategori">
+    <End Role="Alt_Kategori" Type="ESatisModel.Alt_Kategori" Multiplicity="1" />
+    <End Role="Urunler" Type="ESatisModel.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Alt_Kategori">
+        <PropertyRef Name="AK_ID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="AK_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Urunler" Multiplicity="0..1" />
+    <End Role="Blog" Type="ESatisModel.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKMarkaID">
+    <End Role="Marka" Type="ESatisModel.Marka" Multiplicity="1" />
+    <End Role="Urunler" Type="ESatisModel.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marka">
+        <PropertyRef Name="MarkaID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="MarkaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oneri_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Urunler" Multiplicity="0..1" />
+    <End Role="Oneri" Type="ESatisModel.Oneri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Oneri">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Urunler" Multiplicity="0..1" />
+    <End Role="Satis" Type="ESatisModel.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_Uyeler">
+    <End Role="Uyeler" Type="ESatisModel.Uyeler" Multiplicity="0..1" />
+    <End Role="Satis" Type="ESatisModel.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teslimat_Satis">
+    <End Role="Satis" Type="ESatisModel.Satis" Multiplicity="0..1" />
+    <End Role="Teslimat" Type="ESatisModel.Teslimat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Satis">
+        <PropertyRef Name="SatisID" />
+      </Principal>
+      <Dependent Role="Teslimat">
+        <PropertyRef Name="SatisID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stok_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Urunler" Multiplicity="1" />
+    <End Role="Stok" Type="ESatisModel.Stok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Stok">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorum_Urunler">
+    <End Role="Urunler" Type="ESatisModel.Urunler" Multiplicity="0..1" />
+    <End Role="Yorum" Type="ESatisModel.Yorum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Yorum">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yetkilendirme_Uyeler">
+    <End Role="Uyeler" Type="ESatisModel.Uyeler" Multiplicity="1" />
+    <End Role="Yetkilendirme" Type="ESatisModel.Yetkilendirme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Yetkilendirme">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorum_Uyeler">
+    <End Role="Uyeler" Type="ESatisModel.Uyeler" Multiplicity="0..1" />
+    <End Role="Yorum" Type="ESatisModel.Yorum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Yorum">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yetkilendirme_Yetki">
+    <End Role="Yetki" Type="ESatisModel.Yetki" Multiplicity="1" />
+    <End Role="Yetkilendirme" Type="ESatisModel.Yetkilendirme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yetki">
+        <PropertyRef Name="YetkiID" />
+      </Principal>
+      <Dependent Role="Yetkilendirme">
+        <PropertyRef Name="YetkiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
+</edmx:ConceptualModels>
+<!-- C-S mapping content -->
+<edmx:Mappings>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ESatisModelStoreContainer" CdmEntityContainer="ESatisEntities">
+    <EntitySetMapping Name="Alt_Kategori">
+      <EntityTypeMapping TypeName="ESatisModel.Alt_Kategori">
+        <MappingFragment StoreEntitySet="Alt_Kategori">
+          <ScalarProperty Name="AK_ID" ColumnName="AK_ID" />
+          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blog">
+      <EntityTypeMapping TypeName="ESatisModel.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Metin" ColumnName="Metin" />
+          <ScalarProperty Name="tarih" ColumnName="tarih" />
+          <ScalarProperty Name="BlogResim" ColumnName="BlogResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kategori">
+      <EntityTypeMapping TypeName="ESatisModel.Kategori">
+        <MappingFragment StoreEntitySet="Kategori">
+          <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
+          <ScalarProperty Name="KategoriAd" ColumnName="KategoriAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marka">
+      <EntityTypeMapping TypeName="ESatisModel.Marka">
+        <MappingFragment StoreEntitySet="Marka">
+          <ScalarProperty Name="MarkaID" ColumnName="MarkaID" />
+          <ScalarProperty Name="Marka1" ColumnName="Marka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oneri">
+      <EntityTypeMapping TypeName="ESatisModel.Oneri">
+        <MappingFragment StoreEntitySet="Oneri">
+          <ScalarProperty Name="OneriID" ColumnName="OneriID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Satis">
+      <EntityTypeMapping TypeName="ESatisModel.Satis">
+        <MappingFragment StoreEntitySet="Satis">
+          <ScalarProperty Name="SatisID" ColumnName="SatisID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UyeID" ColumnName="UyeID" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+          <ScalarProperty Name="Satis_Tarih" ColumnName="Satis_Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slider">
+      <EntityTypeMapping TypeName="ESatisModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="SlideID" ColumnName="SlideID" />
+          <ScalarProperty Name="ResimYolu" ColumnName="ResimYolu" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="aktif" ColumnName="aktif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stok">
+      <EntityTypeMapping TypeName="ESatisModel.Stok">
+        <MappingFragment StoreEntitySet="Stok">
+          <ScalarProperty Name="StokID" ColumnName="StokID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ESatisModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teslimat">
+      <EntityTypeMapping TypeName="ESatisModel.Teslimat">
+        <MappingFragment StoreEntitySet="Teslimat">
+          <ScalarProperty Name="TesID" ColumnName="TesID" />
+          <ScalarProperty Name="SatisID" ColumnName="SatisID" />
+          <ScalarProperty Name="Tes_Tarih" ColumnName="Tes_Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunler">
+      <EntityTypeMapping TypeName="ESatisModel.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="AK_ID" ColumnName="AK_ID" />
+          <ScalarProperty Name="MarkaID" ColumnName="MarkaID" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="Ozellikler" ColumnName="Ozellikler" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="imgpath" ColumnName="imgpath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uyeler">
+      <EntityTypeMapping TypeName="ESatisModel.Uyeler">
+        <MappingFragment StoreEntitySet="Uyeler">
+          <ScalarProperty Name="UyeID" ColumnName="UyeID" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Dogum_Tarih" ColumnName="Dogum_Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yetki">
+      <EntityTypeMapping TypeName="ESatisModel.Yetki">
+        <MappingFragment StoreEntitySet="Yetki">
+          <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
+          <ScalarProperty Name="Tip" ColumnName="Tip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yetkilendirme">
+      <EntityTypeMapping TypeName="ESatisModel.Yetkilendirme">
+        <MappingFragment StoreEntitySet="Yetkilendirme">
+          <ScalarProperty Name="Y_ID" ColumnName="Y_ID" />
+          <ScalarProperty Name="UyeID" ColumnName="UyeID" />
+          <ScalarProperty Name="YetkiID" ColumnName="YetkiID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yorum">
+      <EntityTypeMapping TypeName="ESatisModel.Yorum">
+        <MappingFragment StoreEntitySet="Yorum">
+          <ScalarProperty Name="Yorum_ID" ColumnName="Yorum_ID" />
+          <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+          <ScalarProperty Name="UyeID" ColumnName="UyeID" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Yorum1" ColumnName="Yorum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
+</edmx:Mappings>
+</edmx:Runtime>
+<!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+<edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+<Connection><DesignerInfoPropertySet><DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" /></DesignerInfoPropertySet></Connection>
+<edmx:Options><DesignerInfoPropertySet><DesignerProperty Name="ValidateOnBuild" Value="True" /><DesignerProperty Name="EnablePluralization" Value="False" /><DesignerProperty Name="IncludeForeignKeysInModel" Value="True" /><DesignerProperty Name="UseLegacyProvider" Value="False" /><DesignerProperty Name="CodeGenerationStrategy" Value="None" /></DesignerInfoPropertySet></edmx:Options>
+<edmx:Diagrams />
+</edmx:Designer></edmx:Edmx>

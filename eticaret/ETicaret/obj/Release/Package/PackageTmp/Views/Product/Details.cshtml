@@ -1,0 +1,140 @@
+﻿@model ETicaret.Urunler
+@{
+    ViewBag.Title = "Ürün Detayları";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container">
+        <div class="row">
+            @{Html.RenderAction("_Kategori", "Home");}
+            @{
+                ESatisEntities db = new ESatisEntities();
+                var stokAdet = db.Stok.Where(o => o.UrunID == Model.UrunID).Sum(o => o.Adet);
+                var yorum = db.Yorum.Where(o => o.UrunID == Model.UrunID);
+                int yorumAdet = yorum.Count();
+                DateTime tarih = Model.Tarih;
+            }
+                <div class="col-sm-9 padding-right">
+                    <div class="product-details">
+                        <!--product-details-->
+                        <div class="col-sm-5">
+                            <div class="view-product">
+                                <img src="@Model.imgpath" style="max-height:400px; width:auto;"/>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="product-information">
+                                <!--/product-information-->
+                                <img src="/Content/images/product-details/new.jpg" class="newarrival" alt="" />
+                                <h2>@db.Marka.Find(Model.MarkaID).Marka1 @Model.Model</h2>
+                                <p>Web ID :@Model.UrunID</p>
+                                
+                                <span>
+                                    <span>@Model.Fiyat TL</span>
+                                    <label>Adet :</label>
+                                    <input type="text" value="1" />
+                                    <button type="button" class="btn btn-fefault cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Satın Al
+                                    </button>
+                                </span>
+                           
+                                <p><b>Stok Durumu :</b>@stokAdet Adet</p>
+                                <p><b>Eklenme Tarihi :</b>@tarih.Date</p>
+                                <p><b>Satıcı :</b> E-TEKNO</p>
+                                <a href=""><img src="/Content/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+                            </div><!--/product-information-->
+                        </div>
+                    </div><!--/Ürün Detayları-->
+
+                    <div class="category-tab shop-details-tab">
+                        <!--category-tab-->
+                        <div class="col-sm-12">
+                            <ul class="nav nav-tabs">
+                                <li><a href="#details" data-toggle="tab">Detaylar</a></li>
+                                <li><a href="#companyprofile" data-toggle="tab">Benzer Ürünler</a></li>
+                                <li class="active"><a href="#reviews" data-toggle="tab">Yorumlar (@yorumAdet)</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-content"> <!--Tab Menüleri-->
+                            <div class="tab-pane fade" id="details">
+                                <p>@Model.Ozellikler</p><br />
+                                <p>@Model.Aciklama</p>
+                            </div>
+
+                            <div class="tab-pane fade" id="companyprofile">
+                             @{
+                                 var benzer = db.Urunler.Where(x => x.AK_ID == Model.AK_ID);
+                                 int sayac = 0;
+                                 foreach (var item in benzer)
+                                 {
+                                     if (sayac >= 4)
+                                     {
+                                         break;
+                                     }
+                                     if (item.UrunID==Model.UrunID)
+                                     {
+                                         continue;
+                                     }
+                                    <div class="col-sm-3">
+                                        <div class="product-image-wrapper">
+                                            <div class="single-products">
+                                                <div class="productinfo text-center">
+                                                    <img src="@item.imgpath" alt="" />
+                                                    <h2>@item.Fiyat</h2>
+                                                    <p>@db.Marka.Find(item.MarkaID).Marka1 @item.Model</p>
+                                                    @Html.ActionLink("Satın Al", "Details", "Product", new { id = item.UrunID }, new { @class = "btn btn-default get" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     sayac++;
+                                 }
+
+                            }
+                             
+                            </div>
+
+                            <div class="tab-pane fade active in" id="reviews">
+                                <div class="col-sm-12">
+                                   
+                                    @{
+                                        foreach (var item in yorum)
+                                        {
+                                            var uye = db.Uyeler.Find(item.UyeID);
+                                            tarih = Convert.ToDateTime(item.Tarih);
+
+                                                <ul>
+                                                    <li><a href=""><i class="fa fa-user"></i>@uye.Ad @uye.Soyad</a></li>
+                                                    <li><a href=""><i class="fa fa-calendar-o"></i>@tarih.Day @tarih.Month @tarih.Year </a></li>
+                                                </ul>
+                                                <p>@item.Yorum1</p>
+
+                                            }
+                                        }
+
+                                    <p><b>Yorumunuzu yazınız</b></p>
+
+                                    <form action="#">
+                                       
+                                        <textarea name=""  placeholder="Yorumunuz"></textarea>
+                                        <b>Rating: </b> <img src="/Content/images/product-details/rating.png" alt="" />
+                                        <button type="button" class="btn btn-default pull-right">
+                                           Gönder
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div><!--/Alt Tab Menüleri-->
+
+                   @{Html.RenderAction("_OnerilenUrunler", "Home");}
+
+                </div>
+           
+        </div>
+    </div>
+</section>

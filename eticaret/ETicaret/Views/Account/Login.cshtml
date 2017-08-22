@@ -1,0 +1,50 @@
+﻿@using ETicaret.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Kullanıcı Girişi";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                   
+                    <div class="col-sm-4 col-sm-offset-1">
+                        <div class="login-form">
+                            <!--login form-->
+                            <h2>E-Ticaret Kullanıcı Sistemi</h2>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-Mail" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })<br />
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Şifre" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })<br />
+                                
+                                <span>
+                                  @Html.CheckBoxFor(m => m.RememberMe) Beni Hatırla?
+                                    
+                                </span>
+                        </div><!--/login form-->
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Giriş" class="btn btn-primary" /> | @Html.ActionLink("Yeni Kullanıcı Kaydı", "Register", null, new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+                
+                @* Enable this once you have account confirmation enabled for password reset functionality
+                    <p>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p>*@
+            }
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

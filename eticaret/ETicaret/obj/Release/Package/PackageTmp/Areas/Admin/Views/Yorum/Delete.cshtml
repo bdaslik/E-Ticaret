@@ -1,0 +1,71 @@
+﻿@model ETicaret.Yorum
+
+@{
+    ViewBag.Title = "Yorum Silme";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<p class="lead">Silmek İstediğinize Emin misiniz?</p>
+<div>
+
+    <hr />
+    <div class="col-md-6">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <i class="fa fa-text-width"></i>
+                <h3 class="box-title">Yorum Detayları</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+
+                <dl class="dl-horizontal">
+                    <dt>
+                        <p><b>Ürün Adı :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Urunler.Model)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Üye Adı :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Uyeler.Ad)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Tarih :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Tarih)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Yorum :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">    @Html.DisplayFor(model => model.Yorum1)</p>
+                    </dd></td>
+
+
+
+                </dl>
+                <br /><br />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Yorumu Sil" class="btn-danger btn-sm" /> |
+                        @Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn-default btn-sm" })
+                    </div>
+                }
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- ./col -->
+
+
+</div>

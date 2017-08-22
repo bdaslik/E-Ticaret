@@ -1,0 +1,100 @@
+﻿@model ETicaret.Urunler
+
+@{
+    ViewBag.Title = "Ürün Detayları";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <hr />
+    <div class="col-md-6">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <i class="fa fa-text-width"></i>
+                <h3 class="box-title">Ürün Detayları</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+
+                <dl class="dl-horizontal">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="@Model.imgpath" style="max-height:auto; width:150px;" />
+
+                            </td>
+                            <td>
+                    <dt>
+                        <p><b>Alt Kategori :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Alt_Kategori.Ad)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Marka :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Marka.Marka1)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Model :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Model)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Fiyat :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">    @Html.DisplayFor(model => model.Fiyat)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Tarih :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Tarih)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Özellikler :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">    @Html.DisplayFor(model => model.Ozellikler)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Açıklama :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">    @Html.DisplayFor(model => model.Aciklama)</p>
+                    </dd>
+
+                    </td>
+                    </tr>
+                    </table>
+
+
+
+                </dl>
+                <br /><br />
+                <p>
+                    @Html.ActionLink("Düzenle", "Edit", new { id = Model.UrunID }, new { @class = "btn-warning btn-sm" }) |
+                    @Html.ActionLink("Geri Dön", "Index", new { id = Model.UrunID }, new { @class = "btn-default btn-sm" })
+                </p>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- ./col -->
+
+</div>
+
+

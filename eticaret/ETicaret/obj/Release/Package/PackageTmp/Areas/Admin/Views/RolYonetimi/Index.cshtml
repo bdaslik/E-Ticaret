@@ -1,0 +1,44 @@
+﻿@model List<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@{
+    ViewBag.Title = "Rol Yönetimi";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    @Html.ActionLink("Yeni Rol Ekle", "Create", null, new { @class = "btn btn-primary" }) |  @Html.ActionLink("Kullanıcıya Rol Ata", "AddtoUser", null, new { @class = "btn btn-primary" })
+</div>
+
+<div class="row">
+    <div class="col-xs-6">
+
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Mevcut Kullanıcı Rolleri</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Rol Adı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name) - (@item.Users.Count)
+                                </td>
+                                
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+
+    </div>
+</div>

@@ -1,0 +1,108 @@
+﻿@model ETicaret.Urunler
+
+@{
+    ViewBag.Title = "Yeni Ürün Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Create","Urunlers",FormMethod.Post)) 
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="col-md-9">
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Yeni Ürün Ekle</h3>
+            </div><!-- /.box-header -->
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <p class="control-label col-md-2"><b>Resim Yolu:</b></p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.imgpath, new { htmlAttributes = new { @class = "form-control", placeholder = "http://" } })
+                        @Html.ValidationMessageFor(model => model.imgpath, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="control-label col-md-2"><b>Alt Kategori :</b></p>
+                    <div class="col-md-10">
+                        @Html.DropDownList("AK_ID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.AK_ID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="control-label col-md-2"><b>Marka :</b></p>
+                    <div class="col-md-10">
+                        @Html.DropDownList("MarkaID", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.MarkaID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="control-label col-md-2"><b>Model :</b></p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control", placeholder = "Ürün Modeli" } })
+                        @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="control-label col-md-2"><b>Fiyat :</b></p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Fiyat, new { htmlAttributes = new { @class = "form-control", placeholder = "Ürünün Fiyatı" } })
+                        @Html.ValidationMessageFor(model => model.Fiyat, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="control-label col-md-2"><b>Tarih :</b></p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Tarih, new { htmlAttributes = new { @class = "form-control", placeholder = "gg-aa-yyyy" } })
+                        @Html.ValidationMessageFor(model => model.Tarih, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+              
+
+                <div class="form-group">
+                    <p class="control-label col-md-2"><b>Özellikler :</b></p>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Ozellikler, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Ozellikler, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="control-label col-md-2"><b>Açıklama :</b></p>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Aciklama, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Aciklama, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                
+
+               
+
+                
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Oluştur" class="btn btn-success btn-lg" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div><!-- /.box -->
+        <!-- Form Element sizes -->
+
+    </div><!--/.col (left) -->
+
+}

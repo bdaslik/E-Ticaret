@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ETicaret.Alt_Kategori>
+
+@{
+    ViewBag.Title = "Alt Kategoriler";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    @Html.ActionLink("Yeni Alt Kategori", "Create", null, new { @class = "btn btn-primary" })
+</div>
+
+
+<div class="row">
+    <div class="col-xs-8">
+
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Alt Kategoriler</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Alt Kategori Adı</th>
+                            <th>Kategori Adı</th>
+                            <th width="200">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Ad)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Kategori.KategoriAd)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Düzenle", "Edit", new { id = item.AK_ID }, new { @class = "btn-warning btn-xs" }) |
+                                @Html.ActionLink("Sil", "Delete", new { id = item.AK_ID }, new { @class = "btn-danger btn-xs" })
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+
+    </div>
+</div>

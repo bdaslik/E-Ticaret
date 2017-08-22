@@ -1,0 +1,55 @@
+﻿@model ETicaret.Stok
+
+@{
+    ViewBag.Title = "Stok Kaydı Sil";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<p class="lead">Silmek İstediğinize Emin misiniz?</p>
+<div>
+
+    <hr />
+    <div class="col-md-6">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <i class="fa fa-text-width"></i>
+                <h3 class="box-title">Marka Detayları</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+
+                <dl class="dl-horizontal">
+                    <dt>
+                        <p><b>Ürün Adı :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Urunler.Model)</p>
+                    </dd>
+                    <dt>
+                        <p><b>Stok Adedi :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Adet)</p>
+                    </dd>
+
+
+
+                </dl>
+                <br /><br />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Stok Kaydını Sil" class="btn-danger btn-sm" /> |
+                        @Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn-default btn-sm" })
+                    </div>
+                }
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- ./col -->
+
+
+</div>

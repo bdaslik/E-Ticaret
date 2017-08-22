@@ -1,0 +1,163 @@
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\csc.exe
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\vbc.exe
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\VBCSCompiler.exe
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\ETicaret.dll.config
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\ETicaret.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\ETicaret.pdb
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Antlr3.Runtime.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\EntityFramework.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\EntityFramework.SqlServer.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Newtonsoft.Json.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Owin.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.Helpers.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.Mvc.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.Optimization.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.Razor.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.WebPages.Deployment.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.WebPages.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.WebPages.Razor.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\WebGrease.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.Helpers.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.Mvc.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.Optimization.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.Razor.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.WebPages.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.WebPages.Deployment.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\System.Web.WebPages.Razor.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Antlr3.Runtime.pdb
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Newtonsoft.Json.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\EntityFramework.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\EntityFramework.SqlServer.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\obj\Release\ETicaret.csprojResolveAssemblyReference.cache
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\obj\Release\ETicaret.dll
+C:\Users\GS1905\documents\visual studio 2015\Projects\ETicaret\ETicaret\obj\Release\ETicaret.pdb
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\csc.exe
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\vbc.exe
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\VBCSCompiler.exe
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\ETicaret.dll.config
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\ETicaret.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\ETicaret.pdb
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\sqlcese40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\sqlceqp40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\sqlceme40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\sqlceer40EN.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\sqlcecompact40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\sqlceca40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\Microsoft.VC90.CRT\README_ENU.txt
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\Microsoft.VC90.CRT\msvcr90.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\sqlcese40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\sqlceqp40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\sqlceme40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\sqlceer40EN.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\sqlcecompact40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\sqlceca40.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\Microsoft.VC90.CRT\README_ENU.txt
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\Microsoft.VC90.CRT\msvcr90.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Antlr3.Runtime.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\EntityFramework.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\EntityFramework.SqlServer.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\EntityFramework.SqlServerCompact.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Newtonsoft.Json.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Owin.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\PagedList.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\PagedList.Mvc.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Data.SqlServerCe.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.Helpers.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.Mvc.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.Optimization.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.Razor.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.WebPages.Deployment.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.WebPages.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.WebPages.Razor.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\WebGrease.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\EntityFramework.SqlServerCompact.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\PagedList.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\PagedList.Mvc.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.Helpers.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.Mvc.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.Optimization.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.Razor.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.WebPages.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.WebPages.Deployment.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\System.Web.WebPages.Razor.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Antlr3.Runtime.pdb
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Newtonsoft.Json.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\EntityFramework.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\EntityFramework.SqlServer.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\GS1905\Documents\eticaret\ETicaret\obj\Release\ETicaret.csprojResolveAssemblyReference.cache
+C:\Users\GS1905\Documents\eticaret\ETicaret\obj\Release\ETicaret.dll
+C:\Users\GS1905\Documents\eticaret\ETicaret\obj\Release\ETicaret.pdb

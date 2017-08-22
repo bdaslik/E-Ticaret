@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Oneri>
+@{
+    Layout = null;
+}
+
+
+<div class="recommended_items">
+    <!--recommended_items-->
+    <h2 class="title text-center">Önerilen Ürünler</h2>
+
+    <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            @{ int adet = Model.Count();
+                int sayfa = adet / 3;
+                if (adet%3!=0)
+                {
+                    sayfa++;
+                }
+                int sayac,tur=0;
+
+                ESatisEntities db=new ESatisEntities();
+                var urun=new Urunler();
+                for (int i = 1; i <= sayfa; i++)
+                {
+                    sayac = 0;
+                    string durum = "";
+                    if (i == 1)
+                    {
+                        durum = "item active";
+                    }
+                    else
+                    {
+                        durum = "item";
+                    }
+                    <div class="@durum">
+
+                     @foreach (var item in Model)
+                     {
+                         tur++;
+                         if (tur-(i*3)<-2)
+                         {
+                             continue;
+                         }
+                         sayac++;
+                         if (sayac>3)
+                         {
+                             tur = 0;
+                             break;
+                         }
+
+                         urun = db.Urunler.Find(item.UrunID);
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center" >
+                                            
+                                                <img src="@urun.imgpath" style="max-height:200px; width:auto;"/>
+                                            
+                                                <h2>@urun.Fiyat TL</h2>
+                                                <p>@db.Marka.Find(urun.MarkaID).Marka1 @urun.Model</p>
+                                                @Html.ActionLink("Satın Al", "Details", "Product", new { id = urun.UrunID }, new { @class = "btn btn-default get" })
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                }
+
+            }
+        </div>
+        <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+</div><!--/recommended_items-->

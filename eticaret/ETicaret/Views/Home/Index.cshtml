@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Ana Sayfa";
+}
+
+@{Html.RenderAction("_Slider", "Home");}
+
+<section>
+    <div class="container">
+        <div class="row">
+            @{Html.RenderAction("_Kategori", "Home");}
+
+            <div class="col-sm-9 padding-right">
+               
+                @{Html.RenderAction("_EnYeniler", "Home");}<br /><br /><br /><br />
+                @{Html.RenderAction("_OnerilenUrunler", "Home");}
+            </div>
+        </div>
+    </div>
+</section>

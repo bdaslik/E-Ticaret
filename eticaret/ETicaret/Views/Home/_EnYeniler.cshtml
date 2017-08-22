@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Urunler>
+@{
+    Layout = null;
+}
+
+<div class="features_items">
+    <!--features_items-->
+    <h2 class="title text-center">En Yeni Ürünler</h2>
+    @{ESatisEntities db = new ESatisEntities();
+        int sayac = 0; }
+    @foreach (var item in Model)
+    {
+        sayac++;
+        if (sayac>6)
+        {
+            break;
+        }
+        <div class="col-sm-4">
+            <div class="product-image-wrapper">
+                <div class="single-products">
+                    <div class="productinfo text-center">
+                        <img src="@item.imgpath" style="max-height:300px; width:auto;" />
+                        <h2>@item.Fiyat TL</h2>
+                        <p>@db.Marka.Find(item.MarkaID).Marka1 @item.Model</p>
+                        @Html.ActionLink("Satın Al", "Details", "Product", new { id = item.UrunID }, new { @class = "btn btn-default get" })
+                    </div>
+                    <div class="product-overlay">
+                        <div class="overlay-content">
+                            <h2>@item.Fiyat TL</h2>
+                            <p>@db.Marka.Find(item.MarkaID).Marka1 @item.Model</p>
+                            @Html.ActionLink("Satın Al", "Details", "Product", new { id = item.UrunID }, new { @class = "btn btn-default get" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+ 
+   
+
+</div><!--features_items-->

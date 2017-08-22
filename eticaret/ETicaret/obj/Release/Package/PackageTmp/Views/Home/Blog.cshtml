@@ -1,0 +1,51 @@
+﻿@using PagedList
+@using PagedList.Mvc   
+@model IPagedList<ETicaret.Blog>
+
+@{
+    ViewBag.Title = "Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    DateTime tarih;
+}
+
+<section>
+    <div class="container">
+        <div class="row">
+            @{Html.RenderAction("_Kategori", "Home");}
+
+            <div class="col-sm-9">
+                <div class="blog-post-area">
+                    <h2 class="title text-center">Son Ürün İncelemeleri</h2>
+                    @foreach (var item in Model)
+                    {
+                        tarih = Convert.ToDateTime(item.tarih);
+                        <div class="single-blog-post">
+                            <h3>@item.Baslik</h3>
+                            <div class="post-meta">
+                                <ul>
+                                    <li><i class="fa fa-calendar-o"></i>@tarih.Day @tarih.Month @tarih.Year</li>
+                                </ul>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half-o"></i>
+                                </span>
+                            </div>
+                                <img src="@item.BlogResim" style="max-height:auto; width:500px;">
+                            
+                           <br /><br /> <p>@item.Metin</p>
+                            @Html.ActionLink("Ürüne Git", "Details", "Product", new { id = item.UrunID }, new { @class = "btn btn-default get" })
+                        </div><br /><br /><br /><br />
+                    }
+                   
+
+                </div>
+                <div class="pagedList">
+                    @Html.PagedListPager(Model, sayfa => Url.Action("Blog", new { sayfa }), PagedListRenderOptions.PageNumbersOnly)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

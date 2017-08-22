@@ -1,0 +1,80 @@
+﻿@model ETicaret.Blog
+
+@{
+    ViewBag.Title = "İnceleme Silme";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<p class="lead">Silmek İstediğinize Emin misiniz?</p>
+<div>
+
+    <hr />
+    <div class="col-md-6">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <i class="fa fa-text-width"></i>
+                <h3 class="box-title">İnceleme Detayları</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+
+                <dl class="dl-horizontal">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="@Model.BlogResim" style="max-height:auto; width:150px;" />
+
+                            </td>
+                            <td>
+                    <dt>
+                        <p><b>Ürün Adı :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Urunler.Model)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Başlık :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Baslik)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Metin :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Metin)</p>
+                    </dd>
+
+                    <dt>
+                        <p><b>Tarih :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">    @Html.DisplayFor(model => model.tarih)</p>
+                    </dd></td>
+                    </tr>
+                    </table>
+
+
+
+                </dl>
+                <br /><br />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Slider Sil" class="btn-danger btn-sm" /> |
+                        @Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn-default btn-sm" })
+                    </div>
+                }
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- ./col -->
+
+
+</div>

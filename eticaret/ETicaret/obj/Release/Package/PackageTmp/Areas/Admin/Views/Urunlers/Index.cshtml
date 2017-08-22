@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ETicaret.Urunler>
+
+@{
+    ViewBag.Title = "Ürünler";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Mevcut Ürünler</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Resim</th>
+                            <th>Marka</th>
+                            <th>Model</th>
+                            <th>Alt Kategori</th>
+                            <th>Fiyat</th>
+                            <th>Tarih</th>
+                            <th>Özellikler</th>
+                            <th>Açıklama</th>
+                            <th width="200">İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                       @foreach (var item in Model)
+                       {
+                        <tr>
+                            <td>
+                                <img src="@item.imgpath" style="max-height:50px; width:auto;" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Marka.Marka1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Model)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Alt_Kategori.Ad)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fiyat)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Tarih)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ozellikler)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Aciklama)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Düzenle", "Edit", new { id = item.UrunID }, new { @class = "btn-warning btn-xs" }) |
+                                @Html.ActionLink("Detaylar", "Details", new { id = item.UrunID }, new { @class = "btn-info btn-xs" }) |
+                                @Html.ActionLink("Sil", "Delete", new { id = item.UrunID }, new { @class = "btn-danger btn-xs" })
+                            </td>
+                        </tr>
+                       }
+                    </tbody>
+                </table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+
+    </div>
+</div>
+

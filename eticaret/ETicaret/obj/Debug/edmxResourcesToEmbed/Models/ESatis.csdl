@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ESatisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Alt_Kategori">
+    <Key>
+      <PropertyRef Name="AK_ID" />
+    </Key>
+    <Property Name="AK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriID" Type="Int32" />
+    <Property Name="Ad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kategori" Relationship="Self.FK_Alt_Kategori_Kategori" FromRole="Alt_Kategori" ToRole="Kategori" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriID" />
+    </Key>
+    <Property Name="KategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Alt_Kategori" Relationship="Self.FK_Alt_Kategori_Kategori" FromRole="Kategori" ToRole="Alt_Kategori" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_Kategori1" FromRole="Kategori" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Marka">
+    <Key>
+      <PropertyRef Name="MarkaID" />
+    </Key>
+    <Property Name="MarkaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marka1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Urunler_Marka" FromRole="Marka" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Satis">
+    <Key>
+      <PropertyRef Name="SatisID" />
+    </Key>
+    <Property Name="SatisID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" />
+    <Property Name="UyeID" Type="Int32" />
+    <Property Name="Tutar" Type="Int32" />
+    <Property Name="Satis_Tarih" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Satis_Urunler" FromRole="Satis" ToRole="Urunler" />
+    <NavigationProperty Name="Uyeler" Relationship="Self.FK_Satis_Uyeler" FromRole="Satis" ToRole="Uyeler" />
+    <NavigationProperty Name="Teslimat" Relationship="Self.FK_Teslimat_Satis" FromRole="Satis" ToRole="Teslimat" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="SlideID" />
+    </Key>
+    <Property Name="SlideID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResimYolu" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fiyat" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Mesaj" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="Int32" />
+    <Property Name="aktif" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Stok">
+    <Key>
+      <PropertyRef Name="StokID" />
+    </Key>
+    <Property Name="StokID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" Nullable="false" />
+    <Property Name="Adet" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Stok_Urunler" FromRole="Stok" ToRole="Urunler" />
+  </EntityType>
+  <EntityType Name="Teslimat">
+    <Key>
+      <PropertyRef Name="TesID" />
+    </Key>
+    <Property Name="TesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SatisID" Type="Int32" />
+    <Property Name="Tes_Tarih" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Satis" Relationship="Self.FK_Teslimat_Satis" FromRole="Teslimat" ToRole="Satis" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunID" />
+    </Key>
+    <Property Name="UrunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriID" Type="Int32" Nullable="false" />
+    <Property Name="MarkaID" Type="Int32" Nullable="false" />
+    <Property Name="Model" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fiyat" Type="Int32" Nullable="false" />
+    <Property Name="Ozellikler" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="imgpath" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kategori" Relationship="Self.FK_Urunler_Kategori1" FromRole="Urunler" ToRole="Kategori" />
+    <NavigationProperty Name="Marka" Relationship="Self.FK_Urunler_Marka" FromRole="Urunler" ToRole="Marka" />
+    <NavigationProperty Name="Satis" Relationship="Self.FK_Satis_Urunler" FromRole="Urunler" ToRole="Satis" />
+    <NavigationProperty Name="Stok" Relationship="Self.FK_Stok_Urunler" FromRole="Urunler" ToRole="Stok" />
+    <NavigationProperty Name="Yorum" Relationship="Self.FK_Yorum_Urunler" FromRole="Urunler" ToRole="Yorum" />
+  </EntityType>
+  <EntityType Name="Uyeler">
+    <Key>
+      <PropertyRef Name="UyeID" />
+    </Key>
+    <Property Name="UyeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Soyad" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mail" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Sifre" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+    <Property Name="Dogum_Tarih" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Satis" Relationship="Self.FK_Satis_Uyeler" FromRole="Uyeler" ToRole="Satis" />
+    <NavigationProperty Name="Yetkilendirme" Relationship="Self.FK_Yetkilendirme_Uyeler" FromRole="Uyeler" ToRole="Yetkilendirme" />
+    <NavigationProperty Name="Yorum" Relationship="Self.FK_Yorum_Uyeler" FromRole="Uyeler" ToRole="Yorum" />
+  </EntityType>
+  <EntityType Name="Yetki">
+    <Key>
+      <PropertyRef Name="YetkiID" />
+    </Key>
+    <Property Name="YetkiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tip" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Yetkilendirme" Relationship="Self.FK_Yetkilendirme_Yetki" FromRole="Yetki" ToRole="Yetkilendirme" />
+  </EntityType>
+  <EntityType Name="Yetkilendirme">
+    <Key>
+      <PropertyRef Name="Y_ID" />
+    </Key>
+    <Property Name="Y_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UyeID" Type="Int32" Nullable="false" />
+    <Property Name="YetkiID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Uyeler" Relationship="Self.FK_Yetkilendirme_Uyeler" FromRole="Yetkilendirme" ToRole="Uyeler" />
+    <NavigationProperty Name="Yetki" Relationship="Self.FK_Yetkilendirme_Yetki" FromRole="Yetkilendirme" ToRole="Yetki" />
+  </EntityType>
+  <EntityType Name="Yorum">
+    <Key>
+      <PropertyRef Name="Yorum_ID" />
+    </Key>
+    <Property Name="Yorum_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunID" Type="Int32" />
+    <Property Name="UyeID" Type="Int32" />
+    <Property Name="Tarih" Type="DateTime" Precision="0" />
+    <Property Name="Yorum1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Urunler" Relationship="Self.FK_Yorum_Urunler" FromRole="Yorum" ToRole="Urunler" />
+    <NavigationProperty Name="Uyeler" Relationship="Self.FK_Yorum_Uyeler" FromRole="Yorum" ToRole="Uyeler" />
+  </EntityType>
+  <Association Name="FK_Alt_Kategori_Kategori">
+    <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+    <End Role="Alt_Kategori" Type="Self.Alt_Kategori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriID" />
+      </Principal>
+      <Dependent Role="Alt_Kategori">
+        <PropertyRef Name="KategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Kategori1">
+    <End Role="Kategori" Type="Self.Kategori" Multiplicity="1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="KategoriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Urunler_Marka">
+    <End Role="Marka" Type="Self.Marka" Multiplicity="1" />
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marka">
+        <PropertyRef Name="MarkaID" />
+      </Principal>
+      <Dependent Role="Urunler">
+        <PropertyRef Name="MarkaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_Urunler">
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="0..1" />
+    <End Role="Satis" Type="Self.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_Uyeler">
+    <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="0..1" />
+    <End Role="Satis" Type="Self.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teslimat_Satis">
+    <End Role="Satis" Type="Self.Satis" Multiplicity="0..1" />
+    <End Role="Teslimat" Type="Self.Teslimat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Satis">
+        <PropertyRef Name="SatisID" />
+      </Principal>
+      <Dependent Role="Teslimat">
+        <PropertyRef Name="SatisID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stok_Urunler">
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="1" />
+    <End Role="Stok" Type="Self.Stok" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Stok">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorum_Urunler">
+    <End Role="Urunler" Type="Self.Urunler" Multiplicity="0..1" />
+    <End Role="Yorum" Type="Self.Yorum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Urunler">
+        <PropertyRef Name="UrunID" />
+      </Principal>
+      <Dependent Role="Yorum">
+        <PropertyRef Name="UrunID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yetkilendirme_Uyeler">
+    <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="1" />
+    <End Role="Yetkilendirme" Type="Self.Yetkilendirme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Yetkilendirme">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yorum_Uyeler">
+    <End Role="Uyeler" Type="Self.Uyeler" Multiplicity="0..1" />
+    <End Role="Yorum" Type="Self.Yorum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uyeler">
+        <PropertyRef Name="UyeID" />
+      </Principal>
+      <Dependent Role="Yorum">
+        <PropertyRef Name="UyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yetkilendirme_Yetki">
+    <End Role="Yetki" Type="Self.Yetki" Multiplicity="1" />
+    <End Role="Yetkilendirme" Type="Self.Yetkilendirme" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yetki">
+        <PropertyRef Name="YetkiID" />
+      </Principal>
+      <Dependent Role="Yetkilendirme">
+        <PropertyRef Name="YetkiID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ESatisEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alt_Kategori" EntityType="Self.Alt_Kategori" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" />
+    <EntitySet Name="Marka" EntityType="Self.Marka" />
+    <EntitySet Name="Satis" EntityType="Self.Satis" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" />
+    <EntitySet Name="Stok" EntityType="Self.Stok" />
+    <EntitySet Name="Teslimat" EntityType="Self.Teslimat" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+    <EntitySet Name="Uyeler" EntityType="Self.Uyeler" />
+    <EntitySet Name="Yetki" EntityType="Self.Yetki" />
+    <EntitySet Name="Yetkilendirme" EntityType="Self.Yetkilendirme" />
+    <EntitySet Name="Yorum" EntityType="Self.Yorum" />
+    <AssociationSet Name="FK_Alt_Kategori_Kategori" Association="Self.FK_Alt_Kategori_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Alt_Kategori" EntitySet="Alt_Kategori" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Kategori1" Association="Self.FK_Urunler_Kategori1">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Urunler_Marka" Association="Self.FK_Urunler_Marka">
+      <End Role="Marka" EntitySet="Marka" />
+      <End Role="Urunler" EntitySet="Urunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_Urunler" Association="Self.FK_Satis_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_Uyeler" Association="Self.FK_Satis_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teslimat_Satis" Association="Self.FK_Teslimat_Satis">
+      <End Role="Satis" EntitySet="Satis" />
+      <End Role="Teslimat" EntitySet="Teslimat" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stok_Urunler" Association="Self.FK_Stok_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Stok" EntitySet="Stok" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorum_Urunler" Association="Self.FK_Yorum_Urunler">
+      <End Role="Urunler" EntitySet="Urunler" />
+      <End Role="Yorum" EntitySet="Yorum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yetkilendirme_Uyeler" Association="Self.FK_Yetkilendirme_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Yetkilendirme" EntitySet="Yetkilendirme" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yorum_Uyeler" Association="Self.FK_Yorum_Uyeler">
+      <End Role="Uyeler" EntitySet="Uyeler" />
+      <End Role="Yorum" EntitySet="Yorum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yetkilendirme_Yetki" Association="Self.FK_Yetkilendirme_Yetki">
+      <End Role="Yetki" EntitySet="Yetki" />
+      <End Role="Yetkilendirme" EntitySet="Yetkilendirme" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

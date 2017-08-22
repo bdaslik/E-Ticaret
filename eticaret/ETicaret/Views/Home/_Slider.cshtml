@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Slider>
+@{
+    Layout = null;
+}
+
+<section id="slider">
+    <!--slider-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        @{ int j = 0;}
+                        @foreach (var item in Model)
+                        {
+                            string a = "";
+
+                            if (j == 0)
+                            {
+                                a = "active";
+                            }
+                            else
+                            {
+                                a = "";
+                            }
+                            <li data-target="#slider-carousel" data-slide-to="@j" class="@a"></li>
+                            j++;
+                        }
+
+                    </ol>
+
+                    <div class="carousel-inner">
+                        @{ int i = 0;}
+                        @foreach (var item in Model)
+                        {
+                            string durum = "";
+                            if (i == 0)
+                            {
+                                durum = "item active";
+                            }
+                            else
+                            {
+                                durum = "item";
+                            }
+
+                            <div class="@durum">
+
+                                <div class="col-sm-6">
+                                    <h1><span></span>@item.Baslik</h1>
+                                    <h2>@item.Fiyat</h2>
+                                    <p>@item.Mesaj</p>
+                                    @Html.ActionLink("Satın Al", "Details", "Product", new { id = item.link },new { @class = "btn btn-default get" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="@item.ResimYolu" class="girl img-responsive" alt="" />
+                                </div>
+
+                            </div>
+                            i++;
+                        }
+
+                    </div>
+                </div>
+
+
+
+
+
+                    <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section><!--/slider-->

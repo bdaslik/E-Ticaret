@@ -1,0 +1,61 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<ETicaret.Urunler>
+
+@{
+    ESatisEntities db = new ESatisEntities();
+    Marka temp = new Marka();
+    foreach (var item in Model)
+    {
+        temp = db.Marka.Find(item.MarkaID);
+        break;
+    }
+
+    ViewBag.Title = temp.Marka1+" Ürünleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container">
+        <div class="row">
+            @{Html.RenderAction("_Kategori", "Home");}
+
+            
+
+            <div class="col-sm-9 padding-right">
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title text-center">@temp.Marka1</h2>
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="@item.imgpath" style="max-height:200px; width:auto;" />
+                                        <h2>@item.Fiyat TL</h2>
+                                        <p>@db.Marka.Find(item.MarkaID).Marka1 @item.Model</p>
+                                        @Html.ActionLink("Satın Al", "Details", "Product", new { id = item.UrunID }, new { @class = "btn btn-default get" })
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            <h2>@item.Fiyat TL</h2>
+                                            <p>@db.Marka.Find(item.MarkaID).Marka1 @item.Model</p>
+                                            @Html.ActionLink("Satın Al", "Details", "Product", new { id = item.UrunID }, new { @class = "btn btn-default get" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+                </div><!--features_items-->
+                <div class="pagedList">
+                    @Html.PagedListPager(Model, sayfa => Url.Action("MShop", new { sayfa }), PagedListRenderOptions.PageNumbersOnly)
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

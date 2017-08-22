@@ -1,0 +1,54 @@
+﻿@model ETicaret.Alt_Kategori
+
+@{
+    ViewBag.Title = "Alt Kategori Silme";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<p class="lead">Silmek İstediğinize Emin misiniz?</p>
+<div>
+
+    <hr />
+    <div class="col-md-6">
+        <div class="box box-solid">
+            <div class="box-header with-border">
+                <i class="fa fa-text-width"></i>
+                <h3 class="box-title">Marka Detayları</h3>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+
+                <dl class="dl-horizontal">
+                    <dt>
+                        <p><b>Marka Adı :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Ad)</p>
+                    </dd>
+                    <dt>
+                        <p><b>Kategori Adı :</b></p>
+                    </dt>
+
+                    <dd>
+                        <p class="text-light-blue">  @Html.DisplayFor(model => model.Kategori.KategoriAd)</p>
+                    </dd>
+
+
+
+                </dl>
+                <br /><br />
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Kategoriyi Sil" class="btn-danger btn-sm" /> |
+                        @Html.ActionLink("Geri Dön", "Index", null, new { @class = "btn-default btn-sm" })
+                    </div>
+                }
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div><!-- ./col -->
+
+
+</div>
